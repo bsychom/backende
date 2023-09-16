@@ -22,7 +22,7 @@ app.get('/ping', (_req: Request, res: Response) => {
 
 app.get('/users', async (req : Request, res : Response) => {
   const users = await userModel.find();
-  const ret = allUsers(users);
+  const ret = await allUsers(users);
   res.json(ret);
 })
 

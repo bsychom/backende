@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongoose';
 import type { IUsers } from '../allSchema/userSchema'
 
-function allUsers(users : IUsers[]) {
+async function allUsers(users : IUsers[]) {
 
   const ret = users.map(user =>{
     const {_id , username, email} = user;
