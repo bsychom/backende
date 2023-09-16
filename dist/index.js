@@ -30,7 +30,7 @@ app.get('/ping', (_req, res) => {
 });
 app.get('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield userModel_1.default.find();
-    const ret = (0, allUsers_1.default)(users);
+    const ret = yield (0, allUsers_1.default)(users);
     res.json(ret);
 }));
 app.get('/user', (_req, res) => {
