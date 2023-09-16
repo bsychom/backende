@@ -7,13 +7,13 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 8080;
 app.get('/', (_req, res) => {
-    return res.send('hello there');
+    return res.send(' typescript server with express ');
 });
 app.get('/ping', (_req, res) => {
     return res.send('pong 🏓');
 });
-app.get('/users', (_req, res) => {
-    return res.send('users 🏓');
+app.get('/user', (_req, res) => {
+    return res.send('user 🏓');
 });
 app.listen(port, () => {
     return console.log(`Server is listening on ${port}`);
