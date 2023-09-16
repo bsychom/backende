@@ -20,7 +20,7 @@ const userModel_1 = __importDefault(require("./Models/userModel"));
 const allUsers_1 = __importDefault(require("./outils/allUsers"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 8080;
+const port = 5000;
 app.use((0, cors_1.default)());
 app.get('/', (_req, res) => {
     return res.send(' typescript server with express ');
