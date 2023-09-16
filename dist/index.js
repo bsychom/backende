@@ -17,7 +17,6 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
 const ConnectDb_1 = __importDefault(require("./outils/ConnectDb"));
 const userModel_1 = __importDefault(require("./Models/userModel"));
-const allUsers_1 = __importDefault(require("./outils/allUsers"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = 5000;
@@ -30,10 +29,7 @@ app.get('/ping', (_req, res) => {
 });
 app.get('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield userModel_1.default.find();
-    const ret = () => __awaiter(void 0, void 0, void 0, function* () {
-        return yield (0, allUsers_1.default)(users);
-    });
-    return res.json(ret);
+    res.json(users);
 }));
 app.get('/user', (_req, res) => {
     return res.send('user 🏓');
