@@ -30,8 +30,10 @@ app.get('/ping', (_req, res) => {
 });
 app.get('/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield userModel_1.default.find();
-    const ret = yield (0, allUsers_1.default)(users);
-    res.json(ret);
+    const ret = () => __awaiter(void 0, void 0, void 0, function* () {
+        return yield (0, allUsers_1.default)(users);
+    });
+    return res.json(ret);
 }));
 app.get('/user', (_req, res) => {
     return res.send('user 🏓');
